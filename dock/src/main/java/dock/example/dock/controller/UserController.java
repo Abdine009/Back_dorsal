@@ -24,14 +24,14 @@ public class UserController {
 
     //Créer un nouvel user
 
-    @PostMapping("user/create")
+    @PostMapping("/user/create")
     public Userr newUserr(@RequestBody Userr userr){
         return  userService.createUser(userr);
     }
 
     //Supprimer un user
 
-    @DeleteMapping("user/delete/{id}")
+    @DeleteMapping("/user/delete/{id}")
     public void deleteUser(@PathVariable("id") final Integer id){
         userService.deleteUser(id);
     }

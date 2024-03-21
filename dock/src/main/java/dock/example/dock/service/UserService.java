@@ -22,6 +22,7 @@ public class UserService {
     //La méthode pourcréer un nouvel utilisateur
 
     public  Userr createUser(Userr userr){
+        userr.setRole("USER");
         Userr createdUserr = userRepository.save(userr);
         return createdUserr;
     }
