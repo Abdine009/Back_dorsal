@@ -5,9 +5,12 @@ import dock.example.dock.model.Userr;
 import dock.example.dock.repository.UserRepository;
 import dock.example.dock.service.CorrectionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
+import java.time.LocalDate;
+
 
 @RestController
 public class CorrectionController {
@@ -89,4 +92,14 @@ public class CorrectionController {
         return correctionService.getCorrections(id);
 
     }
+
+    //l'endpointpour gérer la remontée des correction entre deux dates
+   /* @GetMapping("/corrections/user/{id}/period")
+    public List<Correction> getUserCorrectionsByPeriod(
+            @PathVariable("id") Integer userId,
+            @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+            @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+
+        return correctionService.getCorrectionsByUserAndPeriod(userId, startDate, endDate);
+    }*/
 }

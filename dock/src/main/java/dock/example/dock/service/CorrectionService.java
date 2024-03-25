@@ -7,6 +7,7 @@ import dock.example.dock.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -52,4 +53,16 @@ public class CorrectionService {
         }
         return userr.getCorrections();
     }
+
+    //Cette fonction permet à l'utilisateur de remonté ses corrections entre deux dates
+/*
+    public List<Correction> getCorrectionsByUserAndPeriod(Integer userId, LocalDate startDate, LocalDate endDate) {
+        Userr user = userRepository.findById(userId).orElse(null);
+
+        if (user == null) {
+            return Collections.emptyList();
+        }
+
+        return correctionRepository.findByUserAndDateBetween(user, startDate, endDate);
+    }*/
 }
